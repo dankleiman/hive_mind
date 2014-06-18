@@ -4,7 +4,7 @@
   <ul>
     <li>
       <%= achievement.task %>
-      <%= form_for @vote, :url => {method: :patch, action: :update, controller: :votes} do |f| %>
+      <%= form_for @vote, :url => {method: :put, action: :update, controller: :votes} do |f| %>
         <%= f.select(:count,
           [['Ooh, teach me how to do that!', 1, {count: 2}],
             ['I can already do that.', 2, {count: -1}],

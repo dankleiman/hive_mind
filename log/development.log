@@ -4211,3 +4211,264 @@ ActionView::Template::Error (No route matches {:action=>"update", :controller=>"
   Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
   Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
   Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.5ms)
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-18 15:12:34 -0400
+Processing by AchievementsController#index as HTML
+  [1m[35mAchievement Load (0.2ms)[0m  SELECT "achievements".* FROM "achievements"
+  Rendered achievements/index.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (No route matches {:action=>"update", :controller=>"votes", :method=>:post}):
+    4:   <ul>
+    5:     <li>
+    6:       <%= achievement.task %>
+    7:       <%= form_for @vote, :url => {method: :post, action: :update, controller: :votes} do |f| %>
+    8:         <%= f.select(:count,
+    9:           [['Ooh, teach me how to do that!', 1, {count: 2}],
+   10:             ['I can already do that.', 2, {count: -1}],
+  app/views/achievements/index.html.erb:7:in `block in _app_views_achievements_index_html_erb__2564531436692886644_70151022106740'
+  app/views/achievements/index.html.erb:3:in `_app_views_achievements_index_html_erb__2564531436692886644_70151022106740'
+
+
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-18 15:13:53 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AchievementsController#index as HTML
+  [1m[35mAchievement Load (0.5ms)[0m  SELECT "achievements".* FROM "achievements"
+  Rendered achievements/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 157ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  app/controllers/application_controller.rb:9:in `current_user'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__3143638242295707855_70364835388120'
+
+
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-18 15:14:42 -0400
+Processing by AchievementsController#index as HTML
+  [1m[35mAchievement Load (0.4ms)[0m  SELECT "achievements".* FROM "achievements"
+  Rendered achievements/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 10ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  app/controllers/application_controller.rb:9:in `current_user'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__3143638242295707855_70364835388120'
+
+
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-18 15:15:06 -0400
+Processing by AchievementsController#index as HTML
+  [1m[35mAchievement Load (0.2ms)[0m  SELECT "achievements".* FROM "achievements"
+  Rendered achievements/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-06-18 15:15:06 -0400
+
+
+Started GET "/assets/votes.css?body=1" for 127.0.0.1 at 2014-06-18 15:15:06 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-18 15:15:06 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-18 15:15:06 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-18 15:15:06 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-18 15:15:06 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-18 15:15:06 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-18 15:15:06 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-18 15:15:06 -0400
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2014-06-18 15:15:18 -0400
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2014-06-18 15:15:18 -0400
+
+
+Started GET "/auth/github/callback?code=367bd82f9018ca385f0c&state=0e46b314a2af48dd3edd3237e9d58b1ee11f6945f671684a" for 127.0.0.1 at 2014-06-18 15:15:18 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"367bd82f9018ca385f0c", "state"=>"0e46b314a2af48dd3edd3237e9d58b1ee11f6945f671684a"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'github' AND "users"."uid" = '5974052'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "users" ("created_at", "name", "provider", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-18 19:15:19.210871"], ["name", "Dan Kleiman"], ["provider", "github"], ["uid", "5974052"], ["updated_at", "2014-06-18 19:15:19.210871"]]
+  [1m[35m (5.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 29ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-18 15:15:19 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mAchievement Load (0.3ms)[0m  [1mSELECT "achievements".* FROM "achievements"[0m
+  Rendered achievements/index.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/achievements/new" for 127.0.0.1 at 2014-06-18 15:15:21 -0400
+Processing by AchievementsController#new as HTML
+  Rendered achievements/new.html.erb within layouts/application (12.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 26ms (Views: 20.1ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/achievements" for 127.0.0.1 at 2014-06-18 15:15:38 -0400
+Processing by AchievementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lBED4VHEB5BwigoEgp/JRMRzGaYrG+xeZebmWXj9GRQ=", "achievement"=>{"task"=>"Migrate my database to postgres from sqlite\r\n"}, "commit"=>"Submit"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.4ms)[0m  INSERT INTO "votes" ("count", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["count", 0], ["created_at", "2014-06-18 19:15:38.962384"], ["updated_at", "2014-06-18 19:15:38.962384"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "achievements" ("created_at", "task", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-06-18 19:15:38.970443"], ["task", "Migrate my database to postgres from sqlite\r\n"], ["updated_at", "2014-06-18 19:15:38.970443"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/achievements
+Completed 302 Found in 20ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-18 15:15:38 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mAchievement Load (0.5ms)[0m  [1mSELECT "achievements".* FROM "achievements"[0m
+  Rendered achievements/index.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (No route matches {:action=>"update", :controller=>"votes", :method=>:put}):
+    4:   <ul>
+    5:     <li>
+    6:       <%= achievement.task %>
+    7:       <%= form_for @vote, :url => {method: :put, action: :update, controller: :votes} do |f| %>
+    8:         <%= f.select(:count,
+    9:           [['Ooh, teach me how to do that!', 1, {count: 2}],
+   10:             ['I can already do that.', 2, {count: -1}],
+  app/views/achievements/index.html.erb:7:in `block in _app_views_achievements_index_html_erb___554116031743365921_70364835290200'
+  app/views/achievements/index.html.erb:3:in `_app_views_achievements_index_html_erb___554116031743365921_70364835290200'
+
+
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.3ms)
+
+
+Started POST "/achievements" for 127.0.0.1 at 2014-06-18 15:17:16 -0400
+Processing by AchievementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lBED4VHEB5BwigoEgp/JRMRzGaYrG+xeZebmWXj9GRQ=", "achievement"=>{"task"=>"Reload this form.\r\n"}, "commit"=>"Submit"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "votes" ("count", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["count", 0], ["created_at", "2014-06-18 19:17:16.989141"], ["updated_at", "2014-06-18 19:17:16.989141"]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "achievements" ("created_at", "task", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-06-18 19:18:45.763210"], ["task", "Reload this form.\r\n"], ["updated_at", "2014-06-18 19:18:45.763210"]]
+  [1m[35m (2.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/achievements
+Completed 302 Found in 88856ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-18 15:18:45 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mAchievement Load (0.3ms)[0m  [1mSELECT "achievements".* FROM "achievements"[0m
+  Rendered achievements/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (No route matches {:action=>"update", :controller=>"votes", :method=>:put}):
+    4:   <ul>
+    5:     <li>
+    6:       <%= achievement.task %>
+    7:       <%= form_for @vote, :url => {method: :put, action: :update, controller: :votes} do |f| %>
+    8:         <%= f.select(:count,
+    9:           [['Ooh, teach me how to do that!', 1, {count: 2}],
+   10:             ['I can already do that.', 2, {count: -1}],
+  app/views/achievements/index.html.erb:7:in `block in _app_views_achievements_index_html_erb___554116031743365921_70364835290200'
+  app/views/achievements/index.html.erb:3:in `_app_views_achievements_index_html_erb___554116031743365921_70364835290200'
+
+
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (44.9ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.8ms)
+
+
+Started POST "/achievements" for 127.0.0.1 at 2014-06-18 15:19:23 -0400
+Processing by AchievementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lBED4VHEB5BwigoEgp/JRMRzGaYrG+xeZebmWXj9GRQ=", "achievement"=>{"task"=>"Create more actions."}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "achievements" ("created_at", "task", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-06-18 19:19:23.362693"], ["task", "Create more actions."], ["updated_at", "2014-06-18 19:19:23.362693"]]
+  [1m[35m (1.7ms)[0m  COMMIT
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "votes" ("achievement_id", "count", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["achievement_id", 3], ["count", 0], ["created_at", "2014-06-18 19:19:23.381168"], ["updated_at", "2014-06-18 19:19:23.381168"], ["user_id", 1]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.3ms)[0m  SELECT  "achievements".* FROM "achievements"  WHERE "achievements"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/achievements
+Completed 302 Found in 105604ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-18 15:21:08 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mAchievement Load (0.2ms)[0m  [1mSELECT "achievements".* FROM "achievements"[0m
+  Rendered achievements/index.html.erb within layouts/application (12.3ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (No route matches {:action=>"update", :controller=>"votes", :method=>:put}):
+    4:   <ul>
+    5:     <li>
+    6:       <%= achievement.task %>
+    7:       <%= form_for @vote, :url => {method: :put, action: :update, controller: :votes} do |f| %>
+    8:         <%= f.select(:count,
+    9:           [['Ooh, teach me how to do that!', 1, {count: 2}],
+   10:             ['I can already do that.', 2, {count: -1}],
+  app/views/achievements/index.html.erb:7:in `block in _app_views_achievements_index_html_erb___554116031743365921_70364835290200'
+  app/views/achievements/index.html.erb:3:in `_app_views_achievements_index_html_erb___554116031743365921_70364835290200'
+
+
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.8ms)
+
+
+Started POST "/achievements" for 127.0.0.1 at 2014-06-18 15:21:27 -0400
+Processing by AchievementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lBED4VHEB5BwigoEgp/JRMRzGaYrG+xeZebmWXj9GRQ=", "achievement"=>{"task"=>"Work through my errors one at a time."}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "achievements" ("created_at", "task", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-06-18 19:21:27.380188"], ["task", "Work through my errors one at a time."], ["updated_at", "2014-06-18 19:21:27.380188"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "votes" ("achievement_id", "count", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["achievement_id", 4], ["count", 0], ["created_at", "2014-06-18 19:21:27.395233"], ["updated_at", "2014-06-18 19:21:27.395233"], ["user_id", 1]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Completed 500 Internal Server Error in 19776ms
+
+SystemExit (exit):
+  app/controllers/achievements_controller.rb:16:in `create'
+
+
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.7ms)

@@ -10,8 +10,10 @@ class AchievementsController < ApplicationController
 
   def create
     @achievement = Achievement.new(achievement_params)
-    @vote = Vote.create(count: 0, user_id: current_user, achievement_id: @achievement)
     if @achievement.save
+      @vote = Vote.create(count: 0, user_id: current_user.id, achievement_id: @achievement.id)
+      @achievement.user_id = current_user.id
+      binding.pry
       flash[:notice] = "Successfully added."
     else
       flash[:notice] = "Could not save your achievement."
