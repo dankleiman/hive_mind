@@ -1,0 +1,6 @@
+<h1>Today I Figured Out How To...</h1>
+
+<%= form_for @achievement do |f| %>
+  <%= f.text_area :task, cols: 80, rows: 5 %><br>
+  <%= f.submit 'Submit' %>
+<% end %>
