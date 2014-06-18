@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140618130429) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "achievements", force: true do |t|
     t.string   "task",       null: false
     t.integer  "user_id"

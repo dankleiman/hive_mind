@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :achievements, only: [:index, :create, :new]
+  resources :votes, only: [:create, :update]
 
   root 'achievements#index'
 

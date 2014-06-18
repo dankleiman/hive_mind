@@ -4,11 +4,12 @@
   <ul>
     <li>
       <%= achievement.task %>
-      <%= form_for @vote do |f| %>
-        <%= f.select(
+      <%= form_for @vote, :url => {method: :patch, action: :update, controller: :votes} do |f| %>
+        <%= f.select(:count,
           [['Ooh, teach me how to do that!', 1, {count: 2}],
-            ['I can already do that', 2, {count: -1}],
-            ['No, thanks. Not interested.', 3, {count: 0}], 3]) %>
+            ['I can already do that.', 2, {count: -1}],
+            ['No, thanks. Not interested.', 3, {count: 0}]]) %>
+        <%= f.submit 'Submit' %>
       <%end%>
     </li>
   </ul>

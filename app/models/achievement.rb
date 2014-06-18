@@ -1,5 +1,7 @@
 class Achievement < ActiveRecord::Base
-  validates :task, presence: true
   has_many :votes
+  belongs_to :user
+
+  validates :task, presence: true
 
 end
