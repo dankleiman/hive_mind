@@ -1,6 +1,7 @@
 class AchievementsController < ApplicationController
   def index
     @achievements = Achievement.all
+    @vote = Vote.new
   end
 
   def new
