@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   root 'achievements#index'
 
   match 'auth/github/callback', to: 'sessions#create', via: [:get, :post]
+  match 'auth/failure', to: redirect('/questions'), via: [:get, :post]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+
 end
