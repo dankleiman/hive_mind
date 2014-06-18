@@ -1,0 +1,13 @@
+<h1>Today Someone Figured Out How To...</h1>
+
+<% @achievements.each do |achievement| %>
+  <ul>
+    <li>
+      <%= achievement.task %>
+    </li>
+  </ul>
+<% end %>
+
+<%= link_to 'Today I Figured Out How To', new_achievement_path%>
+
+<h3>We Want to Learn How To...</h3>
