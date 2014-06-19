@@ -23,14 +23,22 @@ class AchievementsController < ApplicationController
   end
 
   def edit
-    @achievements = Achievement.all
+    binding.pry
+    if current_user.role == 'admin'
+      @achievements = Achievement.all
+    else
+      flash[:notice] = 'You are not allowed to access that page.'
+      redirect_to achievements_path
+    end
   end
 
   def destroy
-    achievement = Achievement.find(params[:id])
-    achievement.destroy
-    flash[:notice] = 'Successfully deleted.'
-    redirect_to '/achievements/edit'
+    if current_user.role == 'admin'
+      achievement = Achievement.find(params[:id])
+      achievement.destroy
+      flash[:notice] = 'Successfully deleted.'
+      redirect_to '/achievements/edit'
+    end
   end
 
   private
