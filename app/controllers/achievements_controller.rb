@@ -23,8 +23,7 @@ class AchievementsController < ApplicationController
   end
 
   def edit
-    binding.pry
-    if current_user.role == 'admin'
+    if current_user.admin?
       @achievements = Achievement.all
     else
       flash[:notice] = 'You are not allowed to access that page.'
@@ -33,7 +32,7 @@ class AchievementsController < ApplicationController
   end
 
   def destroy
-    if current_user.role == 'admin'
+    if current_user.admin?
       achievement = Achievement.find(params[:id])
       achievement.destroy
       flash[:notice] = 'Successfully deleted.'

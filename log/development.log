@@ -16695,3 +16695,42 @@ Processing by AchievementsController#index as HTML
   [1m[35m (1.2ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
   Rendered achievements/index.html.erb within layouts/application (1.2ms)
 Completed 200 OK in 16ms (Views: 6.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-19 16:49:25 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.3ms)[0m  SELECT "achievements".* FROM "achievements"
+  [1m[36mAchievement Load (0.3ms)[0m  [1mSELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id[0m
+  [1m[35m (0.5ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
+  Rendered achievements/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 36ms (Views: 13.7ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-19 16:49:25 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-19 16:49:25 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-19 16:49:25 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-19 16:49:25 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-19 16:49:25 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-19 16:49:25 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-19 16:49:25 -0400
+
+
+Started GET "/achievements/edit" for 127.0.0.1 at 2014-06-19 16:49:27 -0400
+Processing by AchievementsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.4ms)[0m  SELECT "achievements".* FROM "achievements"
+  Rendered achievements/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 16799ms (Views: 6.1ms | ActiveRecord: 0.6ms)
