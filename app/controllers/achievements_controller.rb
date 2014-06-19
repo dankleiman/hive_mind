@@ -22,6 +22,17 @@ class AchievementsController < ApplicationController
     redirect_to achievements_path
   end
 
+  def edit
+    @achievements = Achievement.all
+  end
+
+  def destroy
+    achievement = Achievement.find(params[:id])
+    achievement.destroy
+    flash[:notice] = 'Successfully deleted.'
+    redirect_to '/achievements/edit'
+  end
+
   private
 
   def achievement_params
