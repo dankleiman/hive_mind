@@ -3,7 +3,6 @@ class AchievementsController < ApplicationController
 
   def index
     @achievements = Achievement.all
-    binding.pry
     @vote = Vote.new
     @top_achievements = Achievement.top_achievements
   end
