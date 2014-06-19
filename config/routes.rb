@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   end
     resources :votes, only: :create
 
-  root 'achievements#index'
+  root 'sessions#index'
 
   match 'auth/github/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/questions'), via: [:get, :post]
