@@ -1,24 +1,25 @@
 <h1>Today Someone Figured Out How To...</h1>
 <p></p>
-
-<ul>
-  <% @achievements.each do |achievement| %>
-    <li>
-      <%= achievement.task %>
-      <%= form_for @vote do |f| %>
-        <%= f.select(:weighting,
-          [['Yes, I want to learn how to do that!', 2],
-            ['No, thanks, I can already do that.', -1],
-            ['Sorry, not interested.', 0]]) %>
-         <%= f.hidden_field :achievement_id, :value => achievement.id %>
-        <%= f.submit 'Vote' %>
-      <%end%>
-    </li>
-  <% end %>
-</ul>
-
-
-<%= link_to 'Today I Figured Out How To', new_achievement_path%>
+<% if @achievements.empty? %>
+<p>Looks like there's nothing new to vote on. <%= link_to 'What have you figured out today?', new_achievement_path%></p>
+<% else %>
+  <ul>
+    <% @achievements.each do |achievement| %>
+      <li>
+        <%= achievement.task %>
+        <%= form_for @vote do |f| %>
+          <%= f.select(:weighting,
+            [['Yes, I want to learn how to do that!', 2],
+              ['No, thanks, I can already do that.', -1],
+              ['Sorry, not interested.', 0]]) %>
+           <%= f.hidden_field :achievement_id, :value => achievement.id %>
+          <%= f.submit 'Vote' %>
+        <%end%>
+      </li>
+    <% end %>
+  </ul>
+  <%= button_to 'Add Your Own', new_achievement_path%>
+<% end %>
 
 <h3>We Want to Learn How To...</h3>
 <ul>

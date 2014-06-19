@@ -6,7 +6,8 @@ class VotesController < ApplicationController
     if !vote.save
       flash[:notice] = "Could not count your vote."
     end
-     redirect_to root_path
+    redirect_to achievements_path
+
   end
 
   private
