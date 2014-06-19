@@ -8,10 +8,10 @@
 </head>
 <body>
   <% if current_user %>
+  <div id="user_nav">
     Welcome <strong><%= current_user.name %></strong>!
     <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Github", "/auth/github", id: "sign_in" %>
+  </div>
   <% end %>
 <%= yield %>
 
