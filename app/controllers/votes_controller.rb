@@ -1,10 +1,12 @@
 class VotesController < ApplicationController
 
   def create
-    if Vote.where(user_id: current_user.id, achievement_id: params[:vote][:achievement_id]).empty?
+    if Vote.already_counted?(current_user, params[:vote][:achievement_id])
       vote = Vote.new(votes_params)
       vote.user_id = current_user.id
-      if !vote.save
+      if vote.save
+        flash[:notice] = "Your vote has been recorded!"
+      else
         flash[:notice] = "Could not count your vote."
       end
     else
