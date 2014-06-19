@@ -1,7 +1,7 @@
 <h1>Today Someone Figured Out How To...</h1>
 
-<% @achievements.each do |achievement| %>
-  <ul>
+<ul>
+  <% @achievements.each do |achievement| %>
     <li>
       <%= achievement.task %>
       <%= form_for @vote do |f| %>
@@ -13,9 +13,19 @@
         <%= f.submit 'Submit' %>
       <%end%>
     </li>
-  </ul>
-<% end %>
+  <% end %>
+</ul>
+
 
 <%= link_to 'Today I Figured Out How To', new_achievement_path%>
 
 <h3>We Want to Learn How To...</h3>
+<ul>
+  <% @top_achievements.each do |achievement| %>
+    <li>
+      <%= achievement['task'] %>
+    </li>
+  <% end %>
+</ul>
+
+
