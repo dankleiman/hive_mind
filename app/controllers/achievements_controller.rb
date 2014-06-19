@@ -1,4 +1,6 @@
 class AchievementsController < ApplicationController
+  before_filter :authorize
+
   def index
     @achievements = Achievement.unvoted_achievements(current_user.id)
     @vote = Vote.new
