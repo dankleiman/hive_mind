@@ -1,4 +1,4 @@
-<h1>Today Someone Figured Out How To...</h1>
+<h2>Today Someone Figured Out How To...</h2>
 <p></p>
 <% if @achievements.empty? %>
 <p>Looks like there's nothing new to vote on. <%= link_to 'What have you figured out today?', new_achievement_path%></p>
@@ -21,7 +21,8 @@
   <%= button_to 'Add Your Own', new_achievement_path%>
 <% end %>
 
-<h3>We Want to Learn How To...</h3>
+<h2>We Want to Learn How To...</h2>
+<p>Here are the top 5 things people would like to learn how to do:</p>
 <ul>
   <% @top_achievements.each do |achievement| %>
     <li>
