@@ -1,0 +1,9 @@
+<h3>Edit Achievements</h3>
+<ul>
+    <% @achievements.each do |achievement| %>
+      <li>
+        <%= achievement.task %>, posted by <%= achievement.user.name %>, <%= link_to "Delete", achievement_path(achievement.id) %>
+
+      </li>
+    <% end %>
+  </ul>
