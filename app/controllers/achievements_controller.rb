@@ -1,6 +1,6 @@
 class AchievementsController < ApplicationController
   def index
-    @achievements = Achievement.all
+    @achievements = Achievement.where.not(user_id: current_user.id)
     @vote = Vote.new
     @top_achievements = Achievement.top_achievements
   end

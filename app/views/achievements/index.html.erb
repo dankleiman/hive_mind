@@ -1,4 +1,5 @@
 <h1>Today Someone Figured Out How To...</h1>
+<p></p>
 
 <ul>
   <% @achievements.each do |achievement| %>
@@ -6,11 +7,11 @@
       <%= achievement.task %>
       <%= form_for @vote do |f| %>
         <%= f.select(:weighting,
-          [['Ooh, teach me how to do that!', 2],
-            ['Oh, please, I can already do that.', -1],
-            ['No, thanks. Not interested.', 0]]) %>
+          [['Yes, I want to learn how to do that!', 2],
+            ['No, thanks, I can already do that.', -1],
+            ['Sorry, not interested.', 0]]) %>
          <%= f.hidden_field :achievement_id, :value => achievement.id %>
-        <%= f.submit 'Submit' %>
+        <%= f.submit 'Vote' %>
       <%end%>
     </li>
   <% end %>
