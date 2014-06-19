@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   root 'sessions#index'
 
-  match 'auth/github/callback', to: 'sessions#create', via: [:get, :post]
-  match 'auth/failure', to: redirect('/questions'), via: [:get, :post]
-  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+  get 'auth/github/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/questions')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
 
 end
