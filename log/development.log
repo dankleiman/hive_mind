@@ -10819,3 +10819,162 @@ Started GET "/" for 127.0.0.1 at 2014-06-19 10:26:08 -0400
 Processing by SessionsController#index as HTML
   Rendered sessions/index.html.erb within layouts/application (0.7ms)
 Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-19 11:22:22 -0400
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-19 11:22:22 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:22 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:22 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:22 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:22 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:22 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:22 -0400
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2014-06-19 11:22:23 -0400
+
+
+Started GET "/auth/github/callback?code=d08a7b0e1e8601440282&state=5e02bb0b6fadc3dd739a7f8ab791220e7cdcf37e8de7aa2f" for 127.0.0.1 at 2014-06-19 11:22:23 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"d08a7b0e1e8601440282", "state"=>"5e02bb0b6fadc3dd739a7f8ab791220e7cdcf37e8de7aa2f"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."provider" = 'github' AND "users"."uid" = '5974052'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/achievements
+Completed 302 Found in 60ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-19 11:22:24 -0400
+Processing by AchievementsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mselect a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "achievements"
+  [1m[36mAchievement Load (0.2ms)[0m  [1mSELECT "achievements".* FROM "achievements"[0m
+  Rendered achievements/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 29ms (Views: 18.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:24 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:24 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:24 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:24 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:24 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:24 -0400
+
+
+Started POST "/votes" for 127.0.0.1 at 2014-06-19 11:22:28 -0400
+Processing by VotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lBED4VHEB5BwigoEgp/JRMRzGaYrG+xeZebmWXj9GRQ=", "vote"=>{"weighting"=>"2", "achievement_id"=>"1"}, "commit"=>"Vote"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "votes" ("achievement_id", "created_at", "updated_at", "user_id", "weighting") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["achievement_id", 1], ["created_at", "2014-06-19 15:22:28.248517"], ["updated_at", "2014-06-19 15:22:28.248517"], ["user_id", 1], ["weighting", 2]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/achievements
+Completed 302 Found in 10ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-19 11:22:28 -0400
+Processing by AchievementsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.8ms)[0m  [1mselect a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "achievements"
+  [1m[36mAchievement Load (0.3ms)[0m  [1mSELECT "achievements".* FROM "achievements"[0m
+  Rendered achievements/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 19ms (Views: 13.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:28 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:28 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:28 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:28 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:28 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-19 11:22:28 -0400
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-19 11:22:52 -0400
+Processing by AchievementsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 9ms
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/models/achievement.rb:11:in `unvoted_achievements'
+  app/controllers/achievements_controller.rb:5:in `index'
+
+
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.3ms)
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-19 11:23:02 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  select a.task from achievements a inner join votes v on v.achievement_id = a.id where v.user_id != 1 group by a.task
+  [1m[36m (0.4ms)[0m  [1mselect a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5[0m
+  Rendered achievements/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 27ms (Views: 9.4ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-19 11:23:02 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-19 11:23:02 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-19 11:23:02 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-19 11:23:02 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-19 11:23:02 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-19 11:23:02 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-19 11:23:02 -0400
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-19 11:23:21 -0400
+Processing by AchievementsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mselect a.task from achievements a inner join votes v on v.achievement_id = a.id where v.user_id != 1 group by a.task[0m

@@ -2,7 +2,8 @@ class AchievementsController < ApplicationController
   before_filter :authorize
 
   def index
-    @achievements = Achievement.unvoted_achievements(current_user.id)
+    @achievements = Achievement.all
+    binding.pry
     @vote = Vote.new
     @top_achievements = Achievement.top_achievements
   end
