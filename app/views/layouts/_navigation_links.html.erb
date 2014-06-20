@@ -1,1 +1,7 @@
 <%# add navigation links to this file %>
+
+<% if current_user %>
+    <li class="name">Welcome <strong><%= current_user.name %></strong>!</li>
+    <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+<% end %>
+
