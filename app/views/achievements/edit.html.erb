@@ -1,10 +1,22 @@
 <h3>Edit Achievements</h3>
-<ul>
+
+<table>
+  <thead>
+    <tr>
+      <th width="200">Achievement</th>
+      <th width="150">Posted By</th>
+      <th width="150">Remove</th>
+    </tr>
+  </thead>
+  <tbody>
     <% @achievements.each do |achievement| %>
-      <li>
-        <%= achievement.task %>, posted by <%= achievement.user.name %>, <%= link_to "Delete", achievement, method: :delete, class: "button tiny" %>
-      </li>
+    <tr>
+      <td><%= achievement.task %></td>
+      <td><%= achievement.user.name %></td>
+      <td><%= link_to "Delete", achievement, method: :delete, class: "button tiny" %></td>
+    <tr>
     <% end %>
-  </ul>
+   </tbody>
+ </table>
 
 <p><%= link_to "Back to Achievements", root_url %></p>
