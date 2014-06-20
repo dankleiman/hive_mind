@@ -1,37 +1,58 @@
  <div class="row">
   <div class="large-4 columns">
-    <h3>Today I Figured Out How To...</h3>
+    <h4>Today I Figured Out How To...</h4>
     <p><em>Give a brief description of what you were trying to do, what you figured out and how you think it will help other people.</em></p>
 
     <%= form_for @achievement do |f| %>
       <%= f.text_area :task, cols: 80, rows: 5 %><br>
       <%= f.submit 'Submit', class: "button tiny" %>
     <% end %>
-  </div>
-  <div class="large-4 columns">
-    <h3>Today Someone Figured Out How To...</h3>
-      <% if @achievements.empty? %>
-        <p>Looks like there's nothing new to vote on.
-      <% else %>
-        <ul>
-          <% @achievements.each do |achievement| %>
-            <li>
-              <%= achievement.task %>
-                <%= form_for @vote do |f| %>
-                  <%= f.select(:weighting,
-                    [['Yes, I want to learn how to do that!', 2],
-                      ['No, thanks, I can already do that.', -1],
-                      ['Sorry, not interested.', 0]]) %>
-                   <%= f.hidden_field :achievement_id, :value => achievement.id %>
-                  <%= f.submit 'Vote', class: "button tiny"%>
-                <%end%>
-            </li>
-          <% end %>
-        </ul>
+    <p><strong>You've already figured out how to:</strong></p>
+    <% if @achieved.empty? %>
+      <p>You haven't shared anything yet.</p>
+    <% else %>
+      <ul>
+        <% @achieved.each do |achievement| %>
+          <li><%= achievement.task %></li>
+        <% end %>
+      </ul>
     <% end %>
   </div>
   <div class="large-4 columns">
-    <h3>Most Popular</h3>
+    <h4>Today Someone Figured Out How To...</h4>
+    <p><strong>Vote for things you want to learn:</strong></p>
+    <% if @achievements.empty? %>
+      <p>Looks like there's nothing new to vote on.</p>
+    <% else %>
+      <ul>
+        <% @achievements.each do |achievement| %>
+          <li>
+            <%= achievement.task %>
+              <%= form_for @vote do |f| %>
+                <%= f.select(:weighting,
+                  [['Yes, I want to learn how to do that!', 2],
+                    ['No, thanks, I can already do that.', -1],
+                    ['Sorry, not interested.', 0]]) %>
+                 <%= f.hidden_field :achievement_id, :value => achievement.id %>
+                <%= f.submit 'Vote', class: "button tiny"%>
+              <%end%>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+    <p><strong>You've already voted for:</strong></p>
+    <% if @voted_on.empty? %>
+      <p>You haven't voted on anything yet.</p>
+    <% else %>
+      <ul>
+        <% @voted_on.each do |voted_achievement| %>
+          <li><%= voted_achievement.task %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+  <div class="large-4 columns">
+    <h4>Most Popular</h4>
     <% if @top_achievements.empty? %>
       <p>Nothing's been voted on yet. Better start voting!</p>
     <% else %>

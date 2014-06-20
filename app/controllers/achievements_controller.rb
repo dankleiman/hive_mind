@@ -6,6 +6,8 @@ class AchievementsController < ApplicationController
     @vote = Vote.new
     @top_achievements = Achievement.top_achievements
     @achievement = Achievement.new
+    @voted_on = Achievement.voted_on_achievements(current_user)
+    @achieved = Achievement.where(user: current_user)
   end
 
   def new
