@@ -1,39 +1,51 @@
-<h2>Today Someone Figured Out How To...</h2>
-<p></p>
-<% if @achievements.empty? %>
-  <p>Looks like there's nothing new to vote on. <%= link_to 'What have you figured out today?', new_achievement_path%></p>
-<% else %>
-  <ul>
-    <% @achievements.each do |achievement| %>
-      <li>
-        <%= achievement.task %>
-          <%= form_for @vote do |f| %>
-            <%= f.select(:weighting,
-              [['Yes, I want to learn how to do that!', 2],
-                ['No, thanks, I can already do that.', -1],
-                ['Sorry, not interested.', 0]]) %>
-             <%= f.hidden_field :achievement_id, :value => achievement.id %>
-            <%= f.submit 'Vote' %>
-          <%end%>
-      </li>
-    <% end %>
-  </ul>
-  <%= link_to 'Add Your Own', new_achievement_path%>
-<% end %>
+ <div class="row">
+  <div class="large-4 columns">
+    <h3>Today I Figured Out How To...</h3>
+    <p><em>Give a brief description of what you were trying to do, what you figured out and how you think it will help other people.</em></p>
 
-<h2>We Want to Learn How To...</h2>
-<% if @top_achievements.empty? %>
-  <p>Nothing's been voted on yet. Better start voting!</p>
-<% else %>
-  <p>Here are the top 5 things people would like to learn how to do:</p>
-  <ul>
-    <% @top_achievements.each do |achievement| %>
-      <li>
-        <%= achievement['task'] %>
-      </li>
+    <%= form_for @achievement do |f| %>
+      <%= f.text_area :task, cols: 80, rows: 5 %><br>
+      <%= f.submit 'Submit', class: "button tiny" %>
     <% end %>
-  </ul>
-<% end %>
+  </div>
+  <div class="large-4 columns">
+    <h3>Today Someone Figured Out How To...</h3>
+      <% if @achievements.empty? %>
+        <p>Looks like there's nothing new to vote on.
+      <% else %>
+        <ul>
+          <% @achievements.each do |achievement| %>
+            <li>
+              <%= achievement.task %>
+                <%= form_for @vote do |f| %>
+                  <%= f.select(:weighting,
+                    [['Yes, I want to learn how to do that!', 2],
+                      ['No, thanks, I can already do that.', -1],
+                      ['Sorry, not interested.', 0]]) %>
+                   <%= f.hidden_field :achievement_id, :value => achievement.id %>
+                  <%= f.submit 'Vote', class: "button tiny"%>
+                <%end%>
+            </li>
+          <% end %>
+        </ul>
+    <% end %>
+  </div>
+  <div class="large-4 columns">
+    <h3>Most Popular</h3>
+    <% if @top_achievements.empty? %>
+      <p>Nothing's been voted on yet. Better start voting!</p>
+    <% else %>
+      <p>Here are the top 5 things people would like to learn how to do:</p>
+      <ul>
+        <% @top_achievements.each do |achievement| %>
+          <li>
+            <%= achievement['task'] %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>
 
 <p><%= link_to "Edit Achievements", '/achievements/edit' %></p>
 

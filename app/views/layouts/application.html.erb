@@ -14,9 +14,16 @@
     <header>
       <%= render 'layouts/navigation' %>
     </header>
+    <div class="row">
+      <div class="small-12 small-centered columns">
     <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+      <%= render 'layouts/messages' %>
+
+          <%= yield %>
+
+
     </main>
+     </div>
+      </div>
   </body>
 </html>

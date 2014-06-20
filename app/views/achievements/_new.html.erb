@@ -1,0 +1,8 @@
+<h2>Today I Figured Out How To...</h2>
+
+<p><em>Give a brief description of what you were trying to do, what you figured out and how you think it will help other people.</em></p>
+
+<%= form_for @achievement do |f| %>
+  <%= f.text_area :task, cols: 80, rows: 5 %><br>
+  <%= f.submit 'Submit', class: "button" %>
+<% end %>
