@@ -7,10 +7,10 @@ class VotesController < ApplicationController
       if vote.save
         flash[:notice] = "Your vote has been recorded!"
       else
-        flash[:notice] = "Could not count your vote."
+        flash[:alert] = "Could not count your vote."
       end
     else
-      flash[:notice] = "You already voted for this."
+      flash[:alert] = "You already voted for this."
     end
     redirect_to achievements_path
   end

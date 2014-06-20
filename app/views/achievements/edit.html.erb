@@ -2,7 +2,7 @@
 <ul>
     <% @achievements.each do |achievement| %>
       <li>
-        <%= achievement.task %>, posted by <%= achievement.user.name %>, <%= link_to "Delete", achievement, method: :delete %>
+        <%= achievement.task %>, posted by <%= achievement.user.name %>, <%= link_to "Delete", achievement, method: :delete, class: "button tiny" %>
       </li>
     <% end %>
   </ul>

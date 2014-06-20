@@ -16,17 +16,19 @@ class AchievementsController < ApplicationController
     @achievement.user_id = current_user.id
     if @achievement.save
       flash[:notice] = "Successfully added."
+      redirect_to achievements_path
     else
-      flash[:notice] = "Could not save your achievement."
+      flash[:alert] = "Could not save your achievement."
+      render :new
     end
-    redirect_to achievements_path
+
   end
 
   def edit
     if current_user.admin?
       @achievements = Achievement.all
     else
-      flash[:notice] = 'You are not allowed to access that page.'
+      flash[:alert] = 'You are not allowed to access that page.'
       redirect_to achievements_path
     end
   end

@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
    def authorize
 
     if current_user.nil?
-      flash[:notice] = "Please sign in first"
+      flash[:alert] = "Please sign in first"
       redirect_to '/'
     end
   end
