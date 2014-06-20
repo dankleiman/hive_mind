@@ -16734,3 +16734,1616 @@ Processing by AchievementsController#edit as HTML
   [1m[35mAchievement Load (0.4ms)[0m  SELECT "achievements".* FROM "achievements"
   Rendered achievements/edit.html.erb within layouts/application (1.8ms)
 Completed 200 OK in 16799ms (Views: 6.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-20 10:53:51 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/achievements
+Completed 302 Found in 70ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 10:53:51 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.4ms)[0m  SELECT "achievements".* FROM "achievements"
+  [1m[36mAchievement Load (1.0ms)[0m  [1mSELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id[0m
+  [1m[35m (1.2ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
+  Rendered achievements/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 524ms (Views: 482.3ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:52 -0400
+
+
+Started GET "/achievements/edit" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+Processing by AchievementsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.6ms)[0m  SELECT "achievements".* FROM "achievements"
+  Rendered achievements/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 104ms (Views: 20.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:57 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+Processing by SessionsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/achievements
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+Processing by AchievementsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAchievement Load (0.2ms)[0m  [1mSELECT "achievements".* FROM "achievements"[0m
+  [1m[35mAchievement Load (0.4ms)[0m  SELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id
+  [1m[36m (0.3ms)[0m  [1mselect a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5[0m
+  Rendered achievements/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 10:53:59 -0400
+
+
+Started GET "/achievements/sign_out" for 127.0.0.1 at 2014-06-20 10:54:05 -0400
+
+ActionController::RoutingError (No route matches [GET] "/achievements/sign_out"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/dankleiman/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/dankleiman/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/dankleiman/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (44.7ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.4ms)
+  Rendered /Users/dankleiman/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (94.2ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:12 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:13 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:13 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:13 -0400
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2014-06-20 10:54:16 -0400
+
+
+Started GET "/auth/github/callback?code=f65f49553bf1e0468882&state=6d368a5341b4bcdd11d9b6aabe0fd0e0becd763e96d7f07b" for 127.0.0.1 at 2014-06-20 10:54:16 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"f65f49553bf1e0468882", "state"=>"6d368a5341b4bcdd11d9b6aabe0fd0e0becd763e96d7f07b"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."provider" = 'github' AND "users"."uid" = '5974052'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/achievements
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 10:54:17 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.3ms)[0m  SELECT "achievements".* FROM "achievements"
+  [1m[36mAchievement Load (0.7ms)[0m  [1mSELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id[0m
+  [1m[35m (0.6ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
+  Rendered achievements/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 10.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 10:54:18 -0400
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 10:58:01 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.2ms)[0m  SELECT "achievements".* FROM "achievements"
+  [1m[36mAchievement Load (0.3ms)[0m  [1mSELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id[0m
+  [1m[35m (0.3ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
+  Rendered achievements/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:02 -0400
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 10:58:26 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.2ms)[0m  SELECT "achievements".* FROM "achievements"
+  [1m[36mAchievement Load (0.3ms)[0m  [1mSELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id[0m
+  [1m[35m (0.3ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
+  Rendered achievements/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 8.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:26 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-20 10:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:26 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:26 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 10:58:27 -0400
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (1.1ms)[0m  SELECT "achievements".* FROM "achievements"
+  [1m[36mAchievement Load (0.7ms)[0m  [1mSELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id[0m
+  [1m[35m (0.3ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
+  Rendered achievements/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 15ms (Views: 8.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 11:01:15 -0400
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.2ms)[0m  SELECT "achievements".* FROM "achievements"
+  [1m[36mAchievement Load (0.4ms)[0m  [1mSELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id[0m
+  [1m[35m (0.4ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
+  Rendered achievements/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 11:02:36 -0400
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.2ms)[0m  SELECT "achievements".* FROM "achievements"
+  [1m[36mAchievement Load (0.4ms)[0m  [1mSELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id[0m
+  [1m[35m (0.3ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
+  Rendered achievements/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 11:03:31 -0400
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 11:04:49 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.6ms)[0m  SELECT "achievements".* FROM "achievements"
+  [1m[36mAchievement Load (0.4ms)[0m  [1mSELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id[0m
+  [1m[35m (0.3ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
+  Rendered achievements/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 51ms (Views: 46.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 11:04:50 -0400
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.2ms)[0m  SELECT "achievements".* FROM "achievements"
+  [1m[36mAchievement Load (0.3ms)[0m  [1mSELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id[0m
+  [1m[35m (0.4ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
+  Rendered achievements/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:05 -0400
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.4ms)[0m  SELECT "achievements".* FROM "achievements"
+  [1m[36mAchievement Load (0.5ms)[0m  [1mSELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id[0m
+  [1m[35m (0.5ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
+  Rendered achievements/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 11:05:11 -0400
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 11:06:26 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.2ms)[0m  SELECT "achievements".* FROM "achievements"
+  [1m[36mAchievement Load (0.4ms)[0m  [1mSELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id[0m
+  [1m[35m (0.3ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
+  Rendered achievements/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 11:06:27 -0400
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.2ms)[0m  SELECT "achievements".* FROM "achievements"
+  [1m[36mAchievement Load (0.3ms)[0m  [1mSELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id[0m
+  [1m[35m (0.3ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
+  Rendered achievements/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:40 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:41 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:41 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:41 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:41 -0400
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.8ms)[0m  SELECT "achievements".* FROM "achievements"
+  [1m[36mAchievement Load (0.7ms)[0m  [1mSELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id[0m
+  [1m[35m (0.3ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
+  Rendered achievements/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 9.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:45 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:46 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:46 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:46 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:46 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:46 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:46 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:46 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 11:09:46 -0400
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 11:16:01 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AchievementsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAchievement Load (0.4ms)[0m  [1mSELECT "achievements".* FROM "achievements"[0m
+  [1m[35mAchievement Load (0.7ms)[0m  SELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id
+  [1m[36m (0.8ms)[0m  [1mselect a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5[0m
+  Rendered achievements/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 6518ms (Views: 6437.0ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/votes.css?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/framework_and_overrides.css?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:08 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:09 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:09 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:09 -0400
+
+
+Started GET "/assets/votes.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:09 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-20 11:16:09 -0400
+
+
+Started GET "/achievements/edit" for 127.0.0.1 at 2014-06-20 11:16:14 -0400
+Processing by AchievementsController#edit as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAchievement Load (0.3ms)[0m  [1mSELECT "achievements".* FROM "achievements"[0m
+  Rendered achievements/edit.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 32ms (Views: 19.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-20 11:16:15 -0400
+Processing by SessionsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/achievements
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 11:16:15 -0400
+Processing by AchievementsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAchievement Load (0.2ms)[0m  SELECT "achievements".* FROM "achievements"
+  [1m[36mAchievement Load (0.4ms)[0m  [1mSELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id[0m
+  [1m[35m (0.3ms)[0m  select a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5
+  Rendered achievements/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.0ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 16.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-20 11:16:19 -0400
+Processing by SessionsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/achievements
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/achievements" for 127.0.0.1 at 2014-06-20 11:16:19 -0400
+Processing by AchievementsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAchievement Load (0.2ms)[0m  [1mSELECT "achievements".* FROM "achievements"[0m
+  [1m[35mAchievement Load (0.4ms)[0m  SELECT "achievements".* FROM "achievements" INNER JOIN "votes" ON "votes"."achievement_id" = "achievements"."id" WHERE "votes"."user_id" = 1 GROUP BY achievements.id
+  [1m[36m (0.3ms)[0m  [1mselect a.task, sum(v.weighting) from votes v inner join achievements a on v.achievement_id = a.id group by a.task order by sum(v.weighting) desc limit 5[0m
+  Rendered achievements/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.1ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 16.9ms | ActiveRecord: 1.2ms)
