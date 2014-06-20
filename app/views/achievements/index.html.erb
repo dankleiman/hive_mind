@@ -13,7 +13,7 @@
     <% else %>
       <ul>
         <% @achieved.each do |achievement| %>
-          <li class="past"><%= achievement.task %></li>
+          <li class="past"><%= achievement.task %></li><br>
         <% end %>
       </ul>
     <% end %>
@@ -46,7 +46,7 @@
     <% else %>
       <ul>
         <% @voted_on.each do |voted_achievement| %>
-          <li class="past"><%= voted_achievement.task %></li>
+          <li class="past"><%= voted_achievement.task %></li><br>
         <% end %>
       </ul>
     <% end %>
